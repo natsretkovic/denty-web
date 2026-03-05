@@ -152,7 +152,16 @@ export default function PacijentProfil() {
                     <p style={s.infoTekst}><strong>Tel:</strong> {pacijent?.brojTelefona}</p>
                     <p style={s.infoTekst}><strong>Email:</strong> {pacijent?.email || "/"}</p>
                 </div>
-            </div>
+                {pacijent?.napomene && (
+                    <p style={{ marginTop: '10px', fontSize: '14px', color: '#4a5568' }}>
+                        <strong>Napomene:</strong> {pacijent.napomene}
+                    </p> )}
+                    {karton?.alergije && karton.alergije.length > 0 && (
+                    <p style={{ marginTop: '8px', fontSize: '14px', color: '#4a5568' }}>
+                        <strong>Alergije:</strong> {karton.alergije.join(', ')}
+                    </p>
+                )}
+                    </div>
 
             <div style={s.mainGrid}>
                 <div style={s.kartonCard}>

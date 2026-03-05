@@ -8,8 +8,9 @@ export default function MenadzmentPacijent() {
   const [editId, setEditId] = useState(null);
 
   const [forma, setForma] = useState({
-    ime: '', prezime: '', jmbg: '', brojTelefona: '', email: '', datumRodjenja: ''
+    ime: '', prezime: '', jmbg: '', brojTelefona: '', email: '', datumRodjenja: '', napomene: ''
   });
+  const [alergije, setAlergije] = useState('');
 
   useEffect(() => { ucitajSve(); }, []);
 
@@ -27,7 +28,7 @@ export default function MenadzmentPacijent() {
         await api.azurirajPacijenta(editId, forma);
       } else {
         const novi = await api.kreirajPacijenta(forma);
-        await api.kreirajKarton({ pacijentId: novi.id, zubi: [] });
+        await api.kreirajKarton({ pacijentId: novi.id, zubi: [] , alergije: alergije ? alergije.split(',').map(a => a.trim()) : []});
       }
       resetujFormu();
       ucitajSve();
@@ -55,6 +56,7 @@ export default function MenadzmentPacijent() {
     setForma({ ime: '', prezime: '', jmbg: '', brojTelefona: '', email: '', datumRodjenja: '' });
     setEditId(null);
     setPrikaziFormu(false);
+    setAlergije('');
   };
 
   return (
@@ -74,10 +76,20 @@ export default function MenadzmentPacijent() {
             <div style={s.grid}>
               <input placeholder="Ime" style={s.input} value={forma.ime} onChange={e => setForma({...forma, ime: e.target.value})} required />
               <input placeholder="Prezime" style={s.input} value={forma.prezime} onChange={e => setForma({...forma, prezime: e.target.value})} required />
-              <input placeholder="JMBG" style={s.input} value={forma.jmbg} onChange={e => setForma({...forma, jmbg: e.target.value})} required />
+              <input 
+                placeholder="JMBG (13 cifara)" 
+                style={s.input} 
+                value={forma.jmbg} 
+                onChange={e => setForma({...forma, jmbg: e.target.value.replace(/\D/g, '')})} 
+                required 
+                maxLength={13}
+                minLength={13}
+            />
               <input placeholder="Telefon" style={s.input} value={forma.brojTelefona} onChange={e => setForma({...forma, brojTelefona: e.target.value})} />
               <input type="date" style={s.input} value={forma.datumRodjenja} onChange={e => setForma({...forma, datumRodjenja: e.target.value})} />
               <input placeholder="Email" type="email" style={s.input} value={forma.email} onChange={e => setForma({...forma, email: e.target.value})} />
+              <input placeholder="Napomene (opciono)" style={s.input} value={forma.napomene} onChange={e => setForma({...forma, napomene: e.target.value})} />
+              <input placeholder="Alergije (razdvojene zarezom)" style={s.input} value={alergije} onChange={e => setAlergije(e.target.value)} />
             </div>
             <div style={s.akcije}>
               <button type="submit" style={s.saveBtn}>{editId ? "Sačuvaj izmene" : "Kreiraj pacijenta"}</button>
