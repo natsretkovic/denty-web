@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f4f8;
+  color: #1a1a2e;
+}
+
+.pocetni-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.pocetni-header {
+  text-align: center;
+}
+
+.logo-icon {
+  font-size: 3rem;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-top: 0.25rem;
+}
+
+.logo-podnaslov {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.izbor-kartica {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kartica {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 260px;
+  text-align: center;
+  cursor: pointer; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+
+.kartica-ikona {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.kartica h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1a1a2e;
+}
+
+.kartica p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.kartica-btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #3b82f6;
+  color: white;
+}
+
+
+.btn-menadzment {
+  background-color: #10b981;
+}

@@ -1,0 +1,101 @@
+.profil-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.btn-nazad {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.btn-nazad:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.profil-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  border-left: 6px solid #007bff;
+}
+
+.profil-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.profil-header p {
+  margin: 0.5rem 0 0 0;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.profil-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.osnovni-podaci, .zdravstveni-karton {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 0.75rem;
+  margin-top: 0;
+  color: #007bff;
+}
+
+.osnovni-podaci p, .zdravstveni-karton p {
+  line-height: 1.6;
+  margin: 0.8rem 0;
+}
+
+.btn-sekundarno {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-sekundarno:hover {
+  background-color: #e2e6ea;
+  border-color: #adb5bd;
+}
+
+.anamneza-box {
+  background-color: #fff9db;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #fcc419;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .profil-grid {
+    grid-template-columns: 1fr;
+  }
+}
